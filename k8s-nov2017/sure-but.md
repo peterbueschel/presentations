@@ -3,6 +3,20 @@
 % November 16, 2017
 
 
+# Expectations
+
+from a provider/maintainer perspective:
+
+~~~bash
+- ~local Container-Orchestration Cluster
+- on X bare metal nodes
+- with an reliable recovery solution
+- with an easy update process
+- is scalable
+- is extendible 
+- automated
+~~~
+
 # Pre-\*Containerized\*-Age 
 
 ![](pics/story0.png)
