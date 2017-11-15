@@ -3,13 +3,16 @@
 % November 16, 2017
 
 
+# Dream
+
+![](pics/beach.jpeg)
+
 # Expectations
 
 from a provider/maintainer perspective:
 
 ~~~bash
-- ~local Container-Orchestration Cluster
-- on X bare metal nodes
+- installation on X bare metal nodes
 - with an reliable recovery solution
 - with an easy update process
 - is scalable
@@ -391,6 +394,12 @@ sudo docker run -d \
 
 ---
 
+# BUT-Journey
+
+![](pics/but-journey.svg)
+
+---
+
 # Kargo / Kubernetes-Ansible
 
 > running Ansible playbooks installing K8s clusters
@@ -475,6 +484,12 @@ on local host:
 - can be also used for the 'cloud'
 - still some preparation of bare metal hosts
 - still installation of bare metal hosts
+
+---
+
+# BUT-Journey
+
+![](pics/but-journey.svg)
 
 ---
 
