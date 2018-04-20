@@ -1,0 +1,502 @@
+Testing in Go - an Overview
+and howto create a 2-Factor-Klingon-Friendly-Self-Destruction-Service
+08:52 17 Feb 2018
+Tags: golang, go, testing, unit, tdd, bdd
+
+Peter Büschel
+peter.bueschel@logmein.com
+
+##############################################################################
+* 
+
+.image pics/lmi.png _ 950
+
+##############################################################################
+* GoToMeeting
+
+.image pics/startrek-g2m-screen.png _ 750
+
+##############################################################################
+* GoToPeacefulSelfDestruction (g2psd)
+.image pics/g2sd.gif _ 900
+
+##############################################################################
+* Standard Library
+
+all you need is a "_test.go" file and the command 
+
+  go test <OPTIONS>
+
+*Battery*included*:
+- examples as test
+- tests in parallel
+- code coverage
+- subtests
+- filter tests
+- benchmarks
+- …
+
+##############################################################################
+* With QE speech
+
+##############################################################################
+* Unit Tests
+_"…run_units_of_code_with_concrete_input_and_check_the_outcome…"_
+
+*Examples*:
+- normal use case
+- for documentation
+- how to use the package/function/method
+
+*Tests*:
+- catch also edge cases
+- more abstract 
+- proof function 
+
+##############################################################################
+* Unit Tests: Code Snippet
+.code -numbers -edit code/selfdestruction/selfdestr.go 13,33
+
+##############################################################################
+* Unit Tests: Examples Are Tests
+.code -numbers -edit code/selfdestruction/selfdestr_test.go 7,29
+
+: Open the testfile
+: demo also a negative result
+: demo the godoc -http=":6060" and go to http://localhost:6060/pkg/bitbucket.ops.expertcity.com/oa/go-test-presentation/code/selfdestruction/
+
+##############################################################################
+* Unit Tests: Tests
+.code -numbers -edit code/selfdestruction/selfdestr_test.go 31,48
+
+ ok      … coverage: 88.9% of statements
+ 
+
+##############################################################################
+* Table Driven Tests (TDT)
+- Entries of the _Test_Table_ are complete test cases
+- The test code is written once
+- basis for _subtests_ and running tests in parallel
+.code -numbers -edit code/oldcounting/count_test.go 2,14
+
+##############################################################################
+* Table Driven Tests (TDT)
+.image pics/klingon_angry.jpg
+
+
+##############################################################################
+* Table Driven Tests: »gotests« (none TDD)
+.image pics/gotests.gif _ 900
+.caption [[https://github.com/cweill/gotests]]
+
+##############################################################################
+* Test Driven Development
+
+##############################################################################
+* Test Driven Development (TDD)
+"_tests_first_"
+
+- Blackhole Strategy
+  .                                 3a.rewrite
+  .                       ┌------------------------------------------┐
+                   ┌──────V───────────────┐ 1.add/create             |
+                   │NEW * AS TESTABLE CASE├─────────────────┐        |
+                   └────╒═══════════╤═════╧─>─────────┐     │        |
+                        │failing?   |    no     5.run V─────V────┐   |
+                        │           |                 ║TEST CHAIN│   | 
+                        │       yes |         failing?╟─────┬────┘   | 
+                        │           |                 ║     │        |
+                        │           |            no   ║     │        |
+                        │           | 6.Refactor<─────╜     │        |
+                        │           |            yes  │     │        |
+                        │           ├-----------------┘     │        |
+                        │ ┌────┐    V                 2.run │        |
+                        └─┤CODE│<───┴──────────────<────────┴------->┘
+                    4.run └────┘ 3b.(re)write     yes   failing?   no
+
+##############################################################################
+* Test Driven Development: Translator - Old Klingon Counting
+
+Ternary system:
+
+- 1, 2, 3, 3+1, 3+2, 3+3, 2x3+1, 2x3+2,…
+- 1 ≙ wa'
+- 2 ≙ cha'
+- 3 ≙ wej
+- + ≙ je
+- 2x3 ≙ cha'wej
+
+Translator - parameters:
+
+- boundary: 1 > input > 9; error if not
+- input: 1<=integer<=9
+- output: Klingon Number
+
+: Klingon support for the self-destruction-timer
+
+##############################################################################
+* Test Driven Development: Translator - Old Klingon Counting
+First Iteration: error cases
+.code code/oldcounting/count_test.go 24,44
+ 
+##############################################################################
+* Test Driven Development: Translator - Old Klingon Counting
+
+First Iteration:
+
+- possible solution:
+
+.code code/oldcounting/count.go 1,15
+
+##############################################################################
+* Test Driven Development: Translator - Old Klingon Counting
+
+Second Iteration:
+
+- concrete inputs
+
+ {0, `NaKN`, true},           
+ {1, `wa'`, false},           
+ {2, `cha'`, false},          
+ {3, `wej`, false},           
+ {4, `wejjewa'`, false},      
+ {5, `wejjecha'`, false},     
+ {6, `wejjewej`, false},      
+ {7, `cha'wejjewa'`, false},  
+ {8, `cha'wejjecha'`, false}, 
+ {9, `cha'wejjewej`, false},  
+ {10, `NaKN`, true},          
+
+- test code
+
+.code -numbers code/oldcounting/count_test.go 71,73
+
+
+##############################################################################
+* Test Driven Development: Translator - Old Klingon Counting
+
+Second Iteration:
+
+- concrete inputs
+.code -numbers code/oldcounting/count_test.go 51,63
+
+run only the specific tests (filter):
+
+ go test -run=<regexp>
+
+: go test -run=^TestToOldKlingonNumber$/^\[1-9\]$ -v
+
+##############################################################################
+* Test Driven Development: Translator - Old Klingon Counting
+
+Possible solution:
+.code -numbers code/oldcounting/count.go 10,
+
+##############################################################################
+* Test Driven Development: Translator - Old Klingon Counting
+
+Refactoring/Optimizations
+
+- e.g. with benchmarks:
+
+ go test -bench=. -benchmem
+
+- and/or stack trace:
+ 
+ go test -trace trace.out && go tool trace trace.out
+
+- and/or profiling:
+ 
+ go test -cpuprofile cpu.prof && go test -memprofile mem.prof
+
+##############################################################################
+* Stopover: Standard Library - what's left
+
+all you need is a "_test.go" file and the command 
+
+  go test <OPTIONS>
+
+*Battery*included*:
+- examples as test  ✓ 
+- tests in parallel 
+- code coverage     
+- subtests          ✓
+- filter tests      ✓
+- benchmarks        ✓
+- …
+
+##############################################################################
+* Stopover: Standard Library - what's left
+
+code coverage:
+
+- (multiple packages version):
+ 
+ go test -cover ./...
+
+- profiling too:
+
+ go test -coverprofile=coverage.out  && go tool cover -html=coverage.out
+
+parallel tests:
+
+- if tests are isolated, add _t.Parallel()_ to your subtest
+ for n, tt := range tests {
+     tt := tt
+ 	t.Run(fmt.Sprintf("%d", n), func(t *testing.T) {
+         t.Parallel()                                // <-------
+ 		got, err := ToOldKlingonNumber(tt.input)
+ 		if (err != nil) != tt.wantErr {
+         …
+ 
+##############################################################################
+* Summary
+
+TDD with TDTs to Unit-test
+
+ .                         ╔═══════════════════════════╗
+                           ║  ┌────────────┐           ║
+                           ║ ┌┴───────────┐│           ║
+                           ║┌┴───────────┐││           ║
+                           ║│TDT         │││           ║
+                           ║│ {          │││    TDD    ║
+                           ║│  UnitTest, │││           ║
+                           ║│  UnitTest, │││           ║
+                           ║│  UnitTest, │├┘           ║
+                           ║│ }          ├┘            ║
+                           ║└────────────┘             ║
+                           ╚═══════════════════════════╝
+
+
+##############################################################################
+* Behaviour Driven Development
+
+##############################################################################
+* Behaviour Driven Development
+"_tests_first_ with _customer-focus_"  
+
+- with an english-ish DSL often in a _GWT_ (GIVEN WHEN & THEN) format, e.g.:
+
+ GIVEN some precondition
+ WHEN some action happened
+ THEN some testable outcome is achieved
+
+- buiness goals/documentation as tests
+- will decrease the feedback loop
+- Clusterized Blackhole strategy:
+
+    Behaviour─┬─> Scenario1─┬─> Feature1.1─┬─> TDD1.1.1
+              │             │              ├─> TDD1.1.2
+              │             │              └─> …
+              │             ├─> Feature1.2───> …
+              │             │
+              │             │
+              │             └─> …
+              └─> Scenario2 -> …
+
+##############################################################################
+* Behaviour Driven Development
+
+With the stdlib?
+
+##############################################################################
+* What is out there?
+
+##############################################################################
+* Strawpoll
+
+.image pics/umfrageTestingTools.png _ 750
+.caption [[https://www.strawpoll.me/1716206/r]]
+
+##############################################################################
+* LibsClub
+
+.image pics/libsclub.png _ 480
+.caption [[http://libs.club/golang/developement/testing]]
+
+##############################################################################
+* Google - BigQuery
+
+.image pics/bigquery.png _ 600
+.caption [[https://cloud.google.com/bigquery/public-data/github#most_commonly_used_go_packages]]
+
+##############################################################################
+* Medium - Orcaman
+
+.image pics/top10importedRepos.png _ 500
+.caption [[https://medium.com/@_orcaman/most-imported-golang-packages-some-insights-fb12915a07]]
+
+##############################################################################
+* Summary
+
+- stdlib  ✓
+- [[https://github.com/stretchr/testify][testify]]
+- [[https://onsi.github.io/ginkgo/][ginkgo & gomega]]
+- [[http://goconvey.co/][goconvey]]
+- [[https://github.com/DATA-DOG/godog][(godog)]]
+
+##############################################################################
+* Stopover: Testify - Assertions
+
+ func Equal(t TestingT, expected, actual interface{}, msgAndArgs ...interface{}) bool {
+ … 
+ 	if !ObjectsAreEqual(expected, actual) {
+ 		diff := diff(expected, actual)
+ …
+ }
+
+
+ func ObjectsAreEqual(expected, actual interface{}) bool {
+ 
+ 	if expected == nil || actual == nil {
+     …
+ 	if exp, ok := expected.([]byte); ok {
+         …
+ 		return bytes.Equal(exp, act)
+ 	}
+ 	return reflect.DeepEqual(expected, actual)
+ }
+
+##############################################################################
+* Stopover: Testify - Assertions
+
+.play -numbers -edit code/asserts/testify_test.go 3,13
+
+##############################################################################
+* Behaviour Driven Development
+
+
+##############################################################################
+* (Behaviour Driven Development): Ginkgo + Gomega
+   
+from a lot of slides before
+
+.code -numbers -edit code/selfdestruction/selfdestr.go 21,30
+
+ ok      … coverage: 88.9% of statements
+
+##############################################################################
+* Behaviour Driven Development: Ginkgo + Gomega
+
+just for having kind of BDD
+
+.code -numbers -edit code/g2kasd/selfdestr.go 15,24
+
+in the GWT format
+
+    GIVEN a human captain of a human starship
+    WHEN  the self-destruction was not initialized successfully
+    THEN  the computer should response with an error message
+
+##############################################################################
+* Behaviour Driven Development: Ginkgo + Gomega
+
+1. _bootstrap_ a Ginkgo test suite (create a _suite_test.go file)
+
+ ginkgo bootstrap
+ 
+2. adding _specs_ to the suite (inside a _test.go file)
+
+ ginkgo generate <...>
+
+3. to run the tests
+
+ ginkgo  <watch>
+
+or
+ 
+ go test
+
+4. code
+
+: access the original pkg from outside -> more behaviour like
+
+##############################################################################
+* Behaviour Driven Development: GoConvey
+
+become Klingon friendlier:
+
+    GIVEN a human captain of a human starship having some Klingons on board
+    WHEN  the self-destruction was initialized successfully
+    THEN  at beginning an extra warning in Klingon should be given
+     AND  the last 9 seconds should also be pronounced in the Klingon language
+
+.image pics/klingon_understand.jpg
+
+##############################################################################
+* Behaviour Driven Development: GoConvey
+
+1. in your path run:
+
+ goconvey
+
+2. no _bootstrap_, just use the GoConvey Composer
+3. copy the skeleton into a _test.go file and add assertions
+
+.image pics/goconvey.gif _ 700
+
+
+##############################################################################
+* Behaviour Driven Development: GoDog
+
+The author is a core member of cucumber team
+
+used DSL is [[http://docs.behat.org/en/v2.5/guides/1.gherkin.html][Gherkin]]
+
+.image pics/gherkin.png _ 600
+.caption [[https://github.com/cucumber/cucumber/wiki/Gherkin]]
+
+##############################################################################
+* Behaviour Driven Development: GoDog
+
+2-Factor-Activation
+
+ Feature: Self-destruction setup with 2-Factor-Activation
+   In order to initialize the self destruction sequence 
+   As a human officer of a starship
+   I need an additional officer to approve the destruction
+
+   Scenario: …
+
+.image pics/kirk_drunk.jpg _ 400
+
+##############################################################################
+* Behaviour Driven Development: GoDog
+
+So we need two humans the run the self-destruction protocol
+
+
+  Scenario Outline: initialize the self-destruction
+    Given there are <number> human officers
+    When <number> officers enter the correct destruct sequence
+    Then it should be <access> to run self-destruction
+    
+    Examples:
+      | number | access    |
+      | 1      | forbidden |
+      | 2      | allowed   |
+
+
+##############################################################################
+* Behaviour Driven Development: GoDog
+
+we are safe now !?
+
+.image pics/scotty_drunk.jpg _ 600
+
+##############################################################################
+* Behaviour Driven Development: GoDog
+
+1. create a _.feature_ file in a new folder called features
+
+2. and add/copy the plain feature description inside
+3. run
+
+ godog
+
+4. copy the snippets into the test file and run again
+
+ godog
+
+5. add context to the snippets
+

@@ -1,0 +1,47 @@
+package translator
+
+import (
+	"container/ring"
+	"errors"
+)
+
+var ErrNaKN = errors.New("input must be greater than 0 and less than 10")
+
+func ToOldKlingonNumber(input uint8) (string, error) {
+	if input > 9 || input < 1 {
+		return "NaKN", ErrNaKN
+	}
+
+	kn := ""
+	if input > 6 {
+		kn += "cha'"
+	}
+	if input > 3 {
+		kn += "wejje"
+	}
+	klingonNumbers := ring.New(3)
+	//							  3    , 1    , 2
+	for _, k := range [...]string{`wej`, `wa'`, `cha'`} {
+		klingonNumbers.Value = k
+		klingonNumbers = klingonNumbers.Next()
+	}
+	klingonNumbers = klingonNumbers.Move(int(input) % 3)
+	kn += klingonNumbers.Value.(string)
+	return kn, nil
+}
+
+func ToOldKlingonNumberSLICE(h int) (string, error) {
+	if h > 9 || h < 1 {
+		return "NaKN", ErrNaKN
+	}
+	kn := ""
+	if h > 6 {
+		kn += "cha'"
+	}
+	if h > 3 {
+		kn += "wejje"
+	}
+	klingonNumbers := [...]string{`wej`, `wa'`, `cha'`}
+	kn += klingonNumbers[h%3]
+	return kn, nil
+}

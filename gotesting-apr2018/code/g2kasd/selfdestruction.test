@@ -1,0 +1,27 @@
+package selfdestruction_test
+
+import (
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+
+	. "bitbucket.ops.expertcity.com/oa/go-test-presentation/code/g2kasd"
+)
+
+var _ = Describe("Selfdestruction", func() {
+	//	var kirk Human
+	//
+	//	Describe("a human captian of a human starship", func() {
+	//		Context("the self-destruction was not initialized successfully", func() {
+	//			It("the computer should response with an error message", func() {
+	//				err := kirk.InitSelfDestruction(10, "the bottle is empty")
+	//				Expect(err).Should(HaveOccurred())
+	//			})
+	//		})
+	//		Context("the self-destruction was initialized successfully", func() {
+	//			It("the computer should response with no error message", func() {
+	//				err := kirk.InitSelfDestruction(10, "Destruct sequence 1, code 1-1 A")
+	//				Expect(err).Should(BeNil())
+	//			})
+	//		})
+	//	})
+})

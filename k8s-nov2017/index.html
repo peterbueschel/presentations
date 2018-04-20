@@ -9,56 +9,89 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="./revealjs/css/reveal.css">
-  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="/home/tron/projects/src/github.com/hakimel/reveal.js/css/reveal.css">
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <link rel="stylesheet" href="./revealjs/css/theme/moon.css" id="theme">
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="/home/tron/projects/src/github.com/hakimel/reveal.js/css/theme/moon.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? './revealjs/css/print/pdf.css' : './revealjs/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '/home/tron/projects/src/github.com/hakimel/reveal.js/css/print/pdf.css' : '/home/tron/projects/src/github.com/hakimel/reveal.js/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="./revealjs/lib/js/html5shiv.js"></script>
+  <script src="/home/tron/projects/src/github.com/hakimel/reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
   <style type="text/css">
       body {
@@ -142,7 +175,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <div class="reveal">
     <div class="slides">
 
-<section>
+<section id="title-slide">
   <h1 class="title">Kubernetes on bare metal? Sure, BUT…</h1>
   <p class="author">Peter B. (LogMeIn)</p>
   <p class="date">November 16, 2017</p>
@@ -150,97 +183,69 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <section id="dream" class="slide level1">
 <h1>Dream</h1>
-<figure>
-<img src="pics/beach.jpeg" />
-</figure>
+<p><img data-src="pics/beach.jpeg" /></p>
 </section>
 <section id="expectations" class="slide level1">
 <h1>Expectations</h1>
 <p>from a provider/maintainer perspective:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">-</span> installation on X bare metal nodes
-<span class="ex">-</span> with an reliable recovery solution
-<span class="ex">-</span> with an easy update process
-<span class="ex">-</span> is scalable
-<span class="ex">-</span> is extendible 
-<span class="ex">-</span> automated</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">-</span> installation on X bare metal nodes</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="ex">-</span> with an reliable recovery solution</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="ex">-</span> with an easy update process</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="ex">-</span> is scalable</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="ex">-</span> is extendible </a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="ex">-</span> automated</a></code></pre></div>
 </section>
 <section id="pre-containerized-age" class="slide level1">
 <h1>Pre-*Containerized*-Age</h1>
-<figure>
-<img src="pics/story0.png" />
-</figure>
+<p><img data-src="pics/story0.png" /></p>
 </section>
 <section id="pre-containerized-age-1" class="slide level1">
 <h1>Pre-*Containerized*-Age</h1>
-<figure>
-<img src="pics/story1.png" />
-</figure>
+<p><img data-src="pics/story1.png" /></p>
 </section>
 <section id="pre-containerized-age-2" class="slide level1">
 <h1>Pre-*Containerized*-Age</h1>
-<figure>
-<img src="pics/story2.png" />
-</figure>
+<p><img data-src="pics/story2.png" /></p>
 </section>
 <section id="the-servers" class="slide level1">
 <h1>The Servers</h1>
-<figure>
-<img src="pics/package.png" />
-</figure>
+<p><img data-src="pics/package.png" /></p>
 </section>
 <section id="the-metal" class="slide level1">
 <h1>The Metal</h1>
-<figure>
-<img src="pics/m610.png" />
-</figure>
+<p><img data-src="pics/m610.png" /></p>
 </section>
 <section id="xenservers" class="slide level1">
 <h1>XenServers</h1>
-<figure>
-<img src="pics/XenCenterGUI.png" />
-</figure>
+<p><img data-src="pics/XenCenterGUI.png" /></p>
 </section>
 <section id="xenservers-1" class="slide level1">
 <h1>XenServers</h1>
-<figure>
-<img src="pics/installer.png" />
-</figure>
+<p><img data-src="pics/installer.png" /></p>
 </section>
 <section id="xenservers-2" class="slide level1">
 <h1>XenServers</h1>
-<figure>
-<img src="pics/foreman.png" />
-</figure>
+<p><img data-src="pics/foreman.png" /></p>
 </section>
 <section id="xenservers-3" class="slide level1">
 <h1>XenServers</h1>
-<figure>
-<img src="pics/foreman2.png" />
-</figure>
+<p><img data-src="pics/foreman2.png" /></p>
 </section>
 <section id="cloudstack" class="slide level1">
 <h1>Cloudstack</h1>
-<figure>
-<img src="pics/CloudPlatform.png" />
-</figure>
+<p><img data-src="pics/CloudPlatform.png" /></p>
 </section>
 <section id="cloudstack-1" class="slide level1">
 <h1>Cloudstack</h1>
-<figure>
-<img src="pics/CloudPlatform2.png" />
-</figure>
+<p><img data-src="pics/CloudPlatform2.png" /></p>
 </section>
 <section id="cloudstack-2" class="slide level1">
 <h1>Cloudstack</h1>
-<figure>
-<img src="pics/CloudPlatform3.png" />
-</figure>
+<p><img data-src="pics/CloudPlatform3.png" /></p>
 </section>
 <section id="but" class="slide level1">
 <h1>BUT…</h1>
-<figure>
-<img src="pics/pexels-photo-433462.jpeg" />
-</figure>
+<p><img data-src="pics/pexels-photo-433462.jpeg" /></p>
 </section>
 <section id="but-1" class="slide level1">
 <h1>BUT…</h1>
@@ -261,13 +266,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section id="expectations-1" class="slide level1">
 <h1>Expectations</h1>
 <p>from a provider/maintainer perspective:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">-</span> ~local Container-Orchestration Cluster
-<span class="ex">-</span> on X bare metal nodes
-<span class="ex">-</span> with an reliable recovery solution
-<span class="ex">-</span> with an easy update process
-<span class="ex">-</span> is scalable
-<span class="ex">-</span> is extendible 
-<span class="ex">-</span> automated</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ex">-</span> ~local Container-Orchestration Cluster</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="ex">-</span> on X bare metal nodes</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="ex">-</span> with an reliable recovery solution</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="ex">-</span> with an easy update process</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="ex">-</span> is scalable</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="ex">-</span> is extendible </a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="ex">-</span> automated</a></code></pre></div>
 <div class="fragment">
 <blockquote>
 <p>But…</p>
@@ -275,15 +280,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div class="fragment">
 <blockquote>
-<p>&quot;You must unlearn what you have learned.&quot;</p>
+<p>“You must unlearn what you have learned.”</p>
 </blockquote>
 </div>
 </section>
 <section id="but-journey" class="slide level1">
 <h1>BUT-Journey</h1>
-<figure>
-<img src="pics/but-journey.svg" />
-</figure>
+<p><img data-src="pics/but-journey.svg" /></p>
 </section>
 <section id="from-scratch" class="slide level1">
 <h1>From-Scratch</h1>
@@ -307,7 +310,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div class="fragment">
 <ol start="3" type="1">
-<li>Prepare nodes somehow (docker, network, ...) 😛</li>
+<li>Prepare nodes somehow (docker, network, …) 😛</li>
 </ol>
 </div>
 <div class="fragment">
@@ -328,7 +331,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </blockquote>
 <div class="fragment">
 <figure>
-<img src="pics/githubK8sDocu.png" alt="https://github.com/kubernetes/features/issues/11" /><figcaption><a href="https://github.com/kubernetes/features/issues/11" class="uri">https://github.com/kubernetes/features/issues/11</a></figcaption>
+<img data-src="pics/githubK8sDocu.png" alt="https://github.com/kubernetes/features/issues/11" /><figcaption><a href="https://github.com/kubernetes/features/issues/11" class="uri">https://github.com/kubernetes/features/issues/11</a></figcaption>
 </figure>
 </div>
 </section>
@@ -337,27 +340,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>mix of</p>
 <div class="fragment">
 <ul>
-<li><a href="https://kubernetes.io/docs/getting-started-guides/scratch/">&quot;Creating a Custom Cluster from Scratch&quot;</a></li>
+<li><a href="https://kubernetes.io/docs/getting-started-guides/scratch/">“Creating a Custom Cluster from Scratch”</a></li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><a href="https://web.archive.org/web/20160502165028/http://kubernetes.io:80/docs/getting-started-guides/docker-multinode">&quot;getting-started-guides/docker-multinode&quot;</a>,</li>
+<li><a href="https://web.archive.org/web/20160502165028/http://kubernetes.io:80/docs/getting-started-guides/docker-multinode">“getting-started-guides/docker-multinode”</a>,</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><a href="https://web.archive.org/web/20160510184355/http://kubernetes.io:80/docs/getting-started-guides/docker-multinode/master">&quot;multinode docker master&quot;</a></li>
+<li><a href="https://web.archive.org/web/20160510184355/http://kubernetes.io:80/docs/getting-started-guides/docker-multinode/master">“multinode docker master”</a></li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><a href="https://web.archive.org/web/20160430123558/http://kubernetes.io:80/docs/getting-started-guides/docker/">&quot;locally via Docker&quot;</a></li>
+<li><a href="https://web.archive.org/web/20160430123558/http://kubernetes.io:80/docs/getting-started-guides/docker/">“locally via Docker”</a></li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li>&quot;github issue pages&quot;: e.g. <a href="https://github.com/moby/moby/pull/22806" class="uri">https://github.com/moby/moby/pull/22806</a> or <a href="https://github.com/kubernetes/kubernetes/issues/4869">https://github.com/kubernetes/issues/4869</a></li>
+<li>“github issue pages”: e.g. <a href="https://github.com/moby/moby/pull/22806" class="uri">https://github.com/moby/moby/pull/22806</a> or <a href="https://github.com/kubernetes/kubernetes/issues/4869">https://github.com/kubernetes/issues/4869</a></li>
 </ul>
 </div>
 <div class="fragment">
@@ -368,195 +371,195 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="quintessence" class="level2">
 <h2>Quintessence</h2>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">on</span> all hosts:
-<span class="ex">-</span> install OS, But…
-<span class="ex">-</span> install Docker and create a second docker daemon instance, But…
-<span class="ex">-</span> delete the default Docker-created bridge and iptables rules
-<span class="ex">-</span> export Etcd and Flannel related environment variables
-<span class="ex">-</span> download and run Etcd, But…
-<span class="ex">-</span> download and run Flannel, But…
-
-<span class="ex">on</span> master node:
-<span class="ex">-</span> docker run ..... hyperkube kubelet, But…
-
-<span class="ex">on</span> worker node:
-<span class="ex">-</span> docker run ..... hyperkube kubelet, But…
-<span class="ex">-</span> docker run ..... hyperkube proxy</code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="ex">on</span> all hosts:</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="ex">-</span> install OS, But…</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="ex">-</span> install Docker and create a second docker daemon instance, But…</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="ex">-</span> delete the default Docker-created bridge and iptables rules</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="ex">-</span> export Etcd and Flannel related environment variables</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="ex">-</span> download and run Etcd, But…</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="ex">-</span> download and run Flannel, But…</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="ex">on</span> master node:</a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="ex">-</span> docker run ..... hyperkube kubelet, But…</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="ex">on</span> worker node:</a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="ex">-</span> docker run ..... hyperkube kubelet, But…</a>
+<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="ex">-</span> docker run ..... hyperkube proxy</a></code></pre></div>
 </section>
 <section id="first-attempts-of-automations" class="level2">
 <h2>First attempts of automations</h2>
 <div class="fragment">
 <p>example shell script:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">MASTER_IP=$(</span><span class="fu">hostname</span> -i<span class="kw">|</span><span class="fu">cut</span> -d<span class="st">&quot; &quot;</span> -f 1<span class="va">)</span>
-<span class="bu">export</span> <span class="va">K8S_VERSION=</span>v1.3.0
-<span class="bu">export</span> <span class="va">FLANNEL_VERSION=</span>0.5.5
-<span class="bu">export</span> <span class="va">FLANNEL_CONTAINER_NAME=</span>flanneld
-<span class="bu">export</span> <span class="va">FLANNEL_IPMASQ=</span>false
-<span class="bu">export</span> <span class="va">FLANNEL_IFACE=</span>eth0
-<span class="bu">export</span> <span class="va">ETCD_SERVERS=</span>http://<span class="va">${IP_MASTER}</span>:2379,http://<span class="va">${IP_NODE1}</span>:22379,http://<span class="va">${IP_NODE2}</span>:2379
-
-<span class="co"># flannel env comes from subnet.env, created at first run of flanneld</span>
-<span class="co">#FLANNEL_NETWORK=192.168.0.0/16</span>
-<span class="co">#FLANNEL_SUBNET=192.168.24.1/24</span>
-<span class="co">#FLANNEL_MTU=1472</span>
-<span class="co">#FLANNEL_IPMASQ=false</span>
-
-
-<span class="co"># on alpine</span>
-<span class="ex">sysctl</span> -w kernel.grsecurity.chroot_deny_chmod=0
-<span class="ex">sysctl</span> -w kernel.grsecurity.chroot_deny_mknod=0
-<span class="co"># get etcd</span>
-<span class="ex">curl</span> -L https://github.com/coreos/etcd/releases/download/v3.0.3/etcd-v3.0.3-linux-amd64.tar.gz -o etcd-v3.0.3-linux-amd64.tar.gz
-<span class="fu">tar</span> xzvf etcd-v3.0.3-linux-amd64.tar.gz <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> etcd-v3.0.3-linux-amd64
-
-<span class="co">#┌─────────────────────────────────────┐</span>
-<span class="co">#│   NEW DOCKER DAEMON INSTANCE        │</span>
-<span class="co">#└─────────────────────────────────────┘</span>
-<span class="co"># to have flanneld inside a container and not on the host we need to start/&#39;bootstrap&#39;</span>
-<span class="co"># a seperate instance of the docker daemon, which allows run containers only with host net.</span>
-<span class="fu">sh</span> -c <span class="st">&#39;docker daemon -H unix:///var/run/docker-bootstrap.sock -p /var/run/docker-bootstrap.pid --iptables=false --ip-masq=false --bridge=none --graph=/var/lib/docker-bootstrap 2&gt; /var/log/docker-bootstrap.log 1&gt; /dev/null &amp;&#39;</span>
-<span class="co"># </span><span class="al">TODO</span><span class="co"> add this to systemd, init.d, ...</span>
-
-<span class="co">#┌─────────────────────────────────────┐</span>
-<span class="co">#│   ETCD                              │</span>
-<span class="co">#└─────────────────────────────────────┘</span>
-<span class="co"># start the first nodes of our etcd cluster using this custom socket</span>
-<span class="ex">./run_etcd_server1.sh</span>
-<span class="co"># ...&#39;docker run&#39; command inside:</span>
-<span class="co"># docker -H unix:///var/run/docker-bootstrap.sock run -d --net=host ....</span>
-
-<span class="co"># now add the flannel config to the key/value store etcd</span>
-<span class="ex">./add_flannel_config.sh</span>
-<span class="co">#</span>
-<span class="co">#┌─────────────────────────────────────┐</span>
-<span class="co">#│   FLANNEL ON MASTER                 │</span>
-<span class="co">#└─────────────────────────────────────┘</span>
-<span class="co"># before docker stop, check if etcd member is running on this docker instance</span>
-<span class="co"># if so, then:</span>
-<span class="co"># - delete membership:</span>
-<span class="co">#   * get the membership id:</span>
-<span class="va">ETCDCTL_API=</span>3 <span class="ex">./etcdctl</span> --endpoints=http://<span class="va">${IP_MASTER}</span>:2379 member list
-<span class="co">#   * remove:</span>
-<span class="va">ETCDCTL_API=</span>3 <span class="ex">./etcdctl</span> --endpoints=http://<span class="va">${IP_MASTER}</span>:2379 member remove 7a283d9ea
-<span class="ex">2d03a3d</span>
-<span class="co"># - add new member (before start the new container on the &#39;system-docker&#39; instance</span>
-<span class="va">ETCDCTL_API=</span>3 <span class="ex">./etcdctl</span> --endpoints=http://<span class="va">${IP_NODE1}</span>:2379 member add etcd_docker0
-<span class="ex">4_1</span> --peer-urls=<span class="st">&quot;http://</span><span class="va">${IP_NODE1}</span><span class="st">:2381&quot;</span>
-
-
-<span class="co"># flannel reconfigures the bridge used by docker</span>
-<span class="co"># ─────&gt; restart the &#39;normal&#39; not the &#39;bootstrap&#39; instance of docker instance, run flannel, restart docker</span>
-<span class="ex">/etc/init.d/docker</span> stop
-<span class="co"># We use the &#39;udp&#39; flannel backend, so</span>
-<span class="ex">modprobe</span> tun
-<span class="co"># run flannel container on the &#39;bootstrap&#39; instance.</span>
-<span class="co"># we need /dev/net/ for the &#39;tun&#39; device </span>
-<span class="ex">docker</span> -H unix:///var/run/docker-bootstrap.sock run -d \
-       --net=host \
-       --name <span class="va">${FLANNEL_CONTAINER_NAME}</span> \
-       --privileged \
-       -v /dev/net:/dev/net \
-       quay.io/coreos/flannel:<span class="va">${FLANNEL_VERSION}</span> \
-       /opt/bin/flanneld \
-       --etcd-endpoints=http://<span class="va">${ETCD_SERVERS}</span> \
-       --ip-masq=<span class="va">${FLANNEL_IPMASQ}</span> \
-       --iface=<span class="va">${FLANNEL_IFACE}</span>
-
-<span class="co"># we need the subnet.env settings from inside the flanneld container</span>
-<span class="ex">docker</span> -H unix:///var/run/docker-bootstrap.sock \
-      exec <span class="va">${FLANNEL_CONTAINER_NAME}</span> cat /run/flannel/subnet.env <span class="op">&gt;</span> subnet.env
-<span class="co"># add settings to the env</span>
-<span class="bu">source</span> subnet.env
-
-<span class="co">#┌─────────────────────────────────────┐</span>
-<span class="co">#│   CONFIGURE OLD DOCKER DAEMON       │</span>
-<span class="co">#└─────────────────────────────────────┘</span>
-<span class="co"># set the flannel &#39;subnet&#39; and &#39;mtu&#39;</span>
-<span class="co"># in alpine it is directly inside the /etc/init.d/docker file:</span>
-
-<span class="co"># add to the command_args=&quot;... --bip=${FLANNEL_SUBNET} --mtu=${FLANNEL_MTU}&quot;</span>
-
-<span class="co"># remove the existing bridge, so that a restart of docker will create a new one with the new given</span>
-<span class="co"># flags.</span>
-<span class="ex">ifconfig</span> docker0 down
-<span class="ex">brctl</span> delbr docker0
-<span class="co"># now start the old/normal/custom docker daemon</span>
-<span class="ex">/etc/init.d/docker</span> start
-<span class="co">#</span>
-<span class="co">#┌─────────────────────────────────────┐</span>
-<span class="co">#│   RUN THE K8S MASTER                │</span>
-<span class="co">#└─────────────────────────────────────┘</span>
-<span class="fu">mkdir</span> -p /var/lib/kubelet
-<span class="fu">mount</span> --bind /var/lib/kubelet /var/lib/kubelet
-<span class="fu">mount</span> --make-shared /var/lib/kubelet
-
-<span class="co"># check if you have the kubelet_manifest folder</span>
-
-
-<span class="ex">docker</span> run \
-    --volume=/:/rootfs:ro \
-    --volume=/sys:/sys:ro \
-    --volume=/var/lib/docker/:/var/lib/docker:rw \
-    --volume=/var/lib/kubelet/:/var/lib/kubelet:rw,shared \
-    --volume=/var/run:/var/run:rw \
-    --volume=/root/kubelet_manifest:/etc/kubernetes/manifests-multi:rw \
-    --net=host \
-    --privileged \
-    --pid=host \
-    -d \
-    gcr.io/google_containers/hyperkube-amd64:<span class="va">${K8S_VERSION}</span> \
-    /hyperkube kubelet \
-        --allow-privileged=true \
-        --api-servers=http://<span class="va">${IP_MASTER}</span>:8080 \
-        --v=2 \
-        --address=0.0.0.0 \
-        --enable-server \
-        --hostname-override=<span class="va">${IP_MASTER}</span> \
-        --cluster-dns=10.0.0.10 --cluster-domain=cluster.local \
-        --config=/etc/kubernetes/manifests-multi \
-        --healthz-port=0 \
-        --read-only-port=0 \
-        --cadvisor-port=0
-
-<span class="co">#</span>
-
-<span class="co">#┌─────────────────────────────────────┐</span>
-<span class="co">#│   ADD A K8S NODE TO THE CLUSTER     │</span>
-<span class="co">#└─────────────────────────────────────┘</span>
-<span class="co"># the addr. of the api server is the one from the master</span>
-<span class="co"># config file is also not needed</span>
-<span class="ex">docker</span> run \
-    --volume=/:/rootfs:ro \
-    --volume=/sys:/sys:ro \
-    --volume=/var/lib/docker/:/var/lib/docker:rw \
-    --volume=/var/lib/kubelet/:/var/lib/kubelet:rw,shared \
-    --volume=/var/run:/var/run:rw \
-    --volume=/root/kubelet_manifest:/etc/kubernetes/manifests-multi:rw \
-    --net=host \
-    --privileged \
-    --pid=host \
-    -d \
-    gcr.io/google_containers/hyperkube-amd64:<span class="va">${K8S_VERSION}</span> \
-    /hyperkube kubelet \
-        --allow-privileged=true \
-        --api-servers=http://<span class="va">${IP_MASTER}</span>:8080 \
-        --v=2 \
-        --address=0.0.0.0 \
-        --enable-server \
-        --hostname-override=<span class="va">${IP_NODE1}</span> \
-        --cluster-dns=10.0.0.10 --cluster-domain=cluster.local \
-        --healthz-port=0 \
-        --read-only-port=0 \
-        --cadvisor-port=0
-
-<span class="co"># you need a second container with the k8s proxy</span>
-<span class="fu">sudo</span> docker run -d \
-    --net=host \
-    --privileged \
-    gcr.io/google_containers/hyperkube-amd64:v<span class="va">${K8S_VERSION}</span> \
-    /hyperkube proxy \
-        --master=http://<span class="va">${IP_MASTER}</span>:8080 \
-        --v=2</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="bu">export</span> <span class="va">MASTER_IP=$(</span><span class="fu">hostname</span> -i<span class="kw">|</span><span class="fu">cut</span> -d<span class="st">&quot; &quot;</span> -f 1<span class="va">)</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="bu">export</span> <span class="va">K8S_VERSION=</span>v1.3.0</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="bu">export</span> <span class="va">FLANNEL_VERSION=</span>0.5.5</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="bu">export</span> <span class="va">FLANNEL_CONTAINER_NAME=</span>flanneld</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="bu">export</span> <span class="va">FLANNEL_IPMASQ=</span>false</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="bu">export</span> <span class="va">FLANNEL_IFACE=</span>eth0</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="bu">export</span> <span class="va">ETCD_SERVERS=</span>http://<span class="va">${IP_MASTER}</span>:2379,http://<span class="va">${IP_NODE1}</span>:22379,http://<span class="va">${IP_NODE2}</span>:2379</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co"># flannel env comes from subnet.env, created at first run of flanneld</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#FLANNEL_NETWORK=192.168.0.0/16</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#FLANNEL_SUBNET=192.168.24.1/24</span></a>
+<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#FLANNEL_MTU=1472</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#FLANNEL_IPMASQ=false</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co"># on alpine</span></a>
+<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="ex">sysctl</span> -w kernel.grsecurity.chroot_deny_chmod=0</a>
+<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="ex">sysctl</span> -w kernel.grsecurity.chroot_deny_mknod=0</a>
+<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co"># get etcd</span></a>
+<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="ex">curl</span> -L https://github.com/coreos/etcd/releases/download/v3.0.3/etcd-v3.0.3-linux-amd64.tar.gz -o etcd-v3.0.3-linux-amd64.tar.gz</a>
+<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="fu">tar</span> xzvf etcd-v3.0.3-linux-amd64.tar.gz <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> etcd-v3.0.3-linux-amd64</a>
+<a class="sourceLine" id="cb5-22" data-line-number="22"></a>
+<a class="sourceLine" id="cb5-23" data-line-number="23"><span class="co">#┌─────────────────────────────────────┐</span></a>
+<a class="sourceLine" id="cb5-24" data-line-number="24"><span class="co">#│   NEW DOCKER DAEMON INSTANCE        │</span></a>
+<a class="sourceLine" id="cb5-25" data-line-number="25"><span class="co">#└─────────────────────────────────────┘</span></a>
+<a class="sourceLine" id="cb5-26" data-line-number="26"><span class="co"># to have flanneld inside a container and not on the host we need to start/&#39;bootstrap&#39;</span></a>
+<a class="sourceLine" id="cb5-27" data-line-number="27"><span class="co"># a seperate instance of the docker daemon, which allows run containers only with host net.</span></a>
+<a class="sourceLine" id="cb5-28" data-line-number="28"><span class="fu">sh</span> -c <span class="st">&#39;docker daemon -H unix:///var/run/docker-bootstrap.sock -p /var/run/docker-bootstrap.pid --iptables=false --ip-masq=false --bridge=none --graph=/var/lib/docker-bootstrap 2&gt; /var/log/docker-bootstrap.log 1&gt; /dev/null &amp;&#39;</span></a>
+<a class="sourceLine" id="cb5-29" data-line-number="29"><span class="co"># </span><span class="al">TODO</span><span class="co"> add this to systemd, init.d, ...</span></a>
+<a class="sourceLine" id="cb5-30" data-line-number="30"></a>
+<a class="sourceLine" id="cb5-31" data-line-number="31"><span class="co">#┌─────────────────────────────────────┐</span></a>
+<a class="sourceLine" id="cb5-32" data-line-number="32"><span class="co">#│   ETCD                              │</span></a>
+<a class="sourceLine" id="cb5-33" data-line-number="33"><span class="co">#└─────────────────────────────────────┘</span></a>
+<a class="sourceLine" id="cb5-34" data-line-number="34"><span class="co"># start the first nodes of our etcd cluster using this custom socket</span></a>
+<a class="sourceLine" id="cb5-35" data-line-number="35"><span class="ex">./run_etcd_server1.sh</span></a>
+<a class="sourceLine" id="cb5-36" data-line-number="36"><span class="co"># ...&#39;docker run&#39; command inside:</span></a>
+<a class="sourceLine" id="cb5-37" data-line-number="37"><span class="co"># docker -H unix:///var/run/docker-bootstrap.sock run -d --net=host ....</span></a>
+<a class="sourceLine" id="cb5-38" data-line-number="38"></a>
+<a class="sourceLine" id="cb5-39" data-line-number="39"><span class="co"># now add the flannel config to the key/value store etcd</span></a>
+<a class="sourceLine" id="cb5-40" data-line-number="40"><span class="ex">./add_flannel_config.sh</span></a>
+<a class="sourceLine" id="cb5-41" data-line-number="41"><span class="co">#</span></a>
+<a class="sourceLine" id="cb5-42" data-line-number="42"><span class="co">#┌─────────────────────────────────────┐</span></a>
+<a class="sourceLine" id="cb5-43" data-line-number="43"><span class="co">#│   FLANNEL ON MASTER                 │</span></a>
+<a class="sourceLine" id="cb5-44" data-line-number="44"><span class="co">#└─────────────────────────────────────┘</span></a>
+<a class="sourceLine" id="cb5-45" data-line-number="45"><span class="co"># before docker stop, check if etcd member is running on this docker instance</span></a>
+<a class="sourceLine" id="cb5-46" data-line-number="46"><span class="co"># if so, then:</span></a>
+<a class="sourceLine" id="cb5-47" data-line-number="47"><span class="co"># - delete membership:</span></a>
+<a class="sourceLine" id="cb5-48" data-line-number="48"><span class="co">#   * get the membership id:</span></a>
+<a class="sourceLine" id="cb5-49" data-line-number="49"><span class="va">ETCDCTL_API=</span>3 <span class="ex">./etcdctl</span> --endpoints=http://<span class="va">${IP_MASTER}</span>:2379 member list</a>
+<a class="sourceLine" id="cb5-50" data-line-number="50"><span class="co">#   * remove:</span></a>
+<a class="sourceLine" id="cb5-51" data-line-number="51"><span class="va">ETCDCTL_API=</span>3 <span class="ex">./etcdctl</span> --endpoints=http://<span class="va">${IP_MASTER}</span>:2379 member remove 7a283d9ea</a>
+<a class="sourceLine" id="cb5-52" data-line-number="52"><span class="ex">2d03a3d</span></a>
+<a class="sourceLine" id="cb5-53" data-line-number="53"><span class="co"># - add new member (before start the new container on the &#39;system-docker&#39; instance</span></a>
+<a class="sourceLine" id="cb5-54" data-line-number="54"><span class="va">ETCDCTL_API=</span>3 <span class="ex">./etcdctl</span> --endpoints=http://<span class="va">${IP_NODE1}</span>:2379 member add etcd_docker0</a>
+<a class="sourceLine" id="cb5-55" data-line-number="55"><span class="ex">4_1</span> --peer-urls=<span class="st">&quot;http://</span><span class="va">${IP_NODE1}</span><span class="st">:2381&quot;</span></a>
+<a class="sourceLine" id="cb5-56" data-line-number="56"></a>
+<a class="sourceLine" id="cb5-57" data-line-number="57"></a>
+<a class="sourceLine" id="cb5-58" data-line-number="58"><span class="co"># flannel reconfigures the bridge used by docker</span></a>
+<a class="sourceLine" id="cb5-59" data-line-number="59"><span class="co"># ─────&gt; restart the &#39;normal&#39; not the &#39;bootstrap&#39; instance of docker instance, run flannel, restart docker</span></a>
+<a class="sourceLine" id="cb5-60" data-line-number="60"><span class="ex">/etc/init.d/docker</span> stop</a>
+<a class="sourceLine" id="cb5-61" data-line-number="61"><span class="co"># We use the &#39;udp&#39; flannel backend, so</span></a>
+<a class="sourceLine" id="cb5-62" data-line-number="62"><span class="ex">modprobe</span> tun</a>
+<a class="sourceLine" id="cb5-63" data-line-number="63"><span class="co"># run flannel container on the &#39;bootstrap&#39; instance.</span></a>
+<a class="sourceLine" id="cb5-64" data-line-number="64"><span class="co"># we need /dev/net/ for the &#39;tun&#39; device </span></a>
+<a class="sourceLine" id="cb5-65" data-line-number="65"><span class="ex">docker</span> -H unix:///var/run/docker-bootstrap.sock run -d \</a>
+<a class="sourceLine" id="cb5-66" data-line-number="66">       --net=host \</a>
+<a class="sourceLine" id="cb5-67" data-line-number="67">       --name <span class="va">${FLANNEL_CONTAINER_NAME}</span> \</a>
+<a class="sourceLine" id="cb5-68" data-line-number="68">       --privileged \</a>
+<a class="sourceLine" id="cb5-69" data-line-number="69">       -v /dev/net:/dev/net \</a>
+<a class="sourceLine" id="cb5-70" data-line-number="70">       quay.io/coreos/flannel:<span class="va">${FLANNEL_VERSION}</span> \</a>
+<a class="sourceLine" id="cb5-71" data-line-number="71">       /opt/bin/flanneld \</a>
+<a class="sourceLine" id="cb5-72" data-line-number="72">       --etcd-endpoints=http://<span class="va">${ETCD_SERVERS}</span> \</a>
+<a class="sourceLine" id="cb5-73" data-line-number="73">       --ip-masq=<span class="va">${FLANNEL_IPMASQ}</span> \</a>
+<a class="sourceLine" id="cb5-74" data-line-number="74">       --iface=<span class="va">${FLANNEL_IFACE}</span></a>
+<a class="sourceLine" id="cb5-75" data-line-number="75"></a>
+<a class="sourceLine" id="cb5-76" data-line-number="76"><span class="co"># we need the subnet.env settings from inside the flanneld container</span></a>
+<a class="sourceLine" id="cb5-77" data-line-number="77"><span class="ex">docker</span> -H unix:///var/run/docker-bootstrap.sock \</a>
+<a class="sourceLine" id="cb5-78" data-line-number="78">      exec <span class="va">${FLANNEL_CONTAINER_NAME}</span> cat /run/flannel/subnet.env <span class="op">&gt;</span> subnet.env</a>
+<a class="sourceLine" id="cb5-79" data-line-number="79"><span class="co"># add settings to the env</span></a>
+<a class="sourceLine" id="cb5-80" data-line-number="80"><span class="bu">source</span> subnet.env</a>
+<a class="sourceLine" id="cb5-81" data-line-number="81"></a>
+<a class="sourceLine" id="cb5-82" data-line-number="82"><span class="co">#┌─────────────────────────────────────┐</span></a>
+<a class="sourceLine" id="cb5-83" data-line-number="83"><span class="co">#│   CONFIGURE OLD DOCKER DAEMON       │</span></a>
+<a class="sourceLine" id="cb5-84" data-line-number="84"><span class="co">#└─────────────────────────────────────┘</span></a>
+<a class="sourceLine" id="cb5-85" data-line-number="85"><span class="co"># set the flannel &#39;subnet&#39; and &#39;mtu&#39;</span></a>
+<a class="sourceLine" id="cb5-86" data-line-number="86"><span class="co"># in alpine it is directly inside the /etc/init.d/docker file:</span></a>
+<a class="sourceLine" id="cb5-87" data-line-number="87"></a>
+<a class="sourceLine" id="cb5-88" data-line-number="88"><span class="co"># add to the command_args=&quot;... --bip=${FLANNEL_SUBNET} --mtu=${FLANNEL_MTU}&quot;</span></a>
+<a class="sourceLine" id="cb5-89" data-line-number="89"></a>
+<a class="sourceLine" id="cb5-90" data-line-number="90"><span class="co"># remove the existing bridge, so that a restart of docker will create a new one with the new given</span></a>
+<a class="sourceLine" id="cb5-91" data-line-number="91"><span class="co"># flags.</span></a>
+<a class="sourceLine" id="cb5-92" data-line-number="92"><span class="ex">ifconfig</span> docker0 down</a>
+<a class="sourceLine" id="cb5-93" data-line-number="93"><span class="ex">brctl</span> delbr docker0</a>
+<a class="sourceLine" id="cb5-94" data-line-number="94"><span class="co"># now start the old/normal/custom docker daemon</span></a>
+<a class="sourceLine" id="cb5-95" data-line-number="95"><span class="ex">/etc/init.d/docker</span> start</a>
+<a class="sourceLine" id="cb5-96" data-line-number="96"><span class="co">#</span></a>
+<a class="sourceLine" id="cb5-97" data-line-number="97"><span class="co">#┌─────────────────────────────────────┐</span></a>
+<a class="sourceLine" id="cb5-98" data-line-number="98"><span class="co">#│   RUN THE K8S MASTER                │</span></a>
+<a class="sourceLine" id="cb5-99" data-line-number="99"><span class="co">#└─────────────────────────────────────┘</span></a>
+<a class="sourceLine" id="cb5-100" data-line-number="100"><span class="fu">mkdir</span> -p /var/lib/kubelet</a>
+<a class="sourceLine" id="cb5-101" data-line-number="101"><span class="fu">mount</span> --bind /var/lib/kubelet /var/lib/kubelet</a>
+<a class="sourceLine" id="cb5-102" data-line-number="102"><span class="fu">mount</span> --make-shared /var/lib/kubelet</a>
+<a class="sourceLine" id="cb5-103" data-line-number="103"></a>
+<a class="sourceLine" id="cb5-104" data-line-number="104"><span class="co"># check if you have the kubelet_manifest folder</span></a>
+<a class="sourceLine" id="cb5-105" data-line-number="105"></a>
+<a class="sourceLine" id="cb5-106" data-line-number="106"></a>
+<a class="sourceLine" id="cb5-107" data-line-number="107"><span class="ex">docker</span> run \</a>
+<a class="sourceLine" id="cb5-108" data-line-number="108">    --volume=/:/rootfs:ro \</a>
+<a class="sourceLine" id="cb5-109" data-line-number="109">    --volume=/sys:/sys:ro \</a>
+<a class="sourceLine" id="cb5-110" data-line-number="110">    --volume=/var/lib/docker/:/var/lib/docker:rw \</a>
+<a class="sourceLine" id="cb5-111" data-line-number="111">    --volume=/var/lib/kubelet/:/var/lib/kubelet:rw,shared \</a>
+<a class="sourceLine" id="cb5-112" data-line-number="112">    --volume=/var/run:/var/run:rw \</a>
+<a class="sourceLine" id="cb5-113" data-line-number="113">    --volume=/root/kubelet_manifest:/etc/kubernetes/manifests-multi:rw \</a>
+<a class="sourceLine" id="cb5-114" data-line-number="114">    --net=host \</a>
+<a class="sourceLine" id="cb5-115" data-line-number="115">    --privileged \</a>
+<a class="sourceLine" id="cb5-116" data-line-number="116">    --pid=host \</a>
+<a class="sourceLine" id="cb5-117" data-line-number="117">    -d \</a>
+<a class="sourceLine" id="cb5-118" data-line-number="118">    gcr.io/google_containers/hyperkube-amd64:<span class="va">${K8S_VERSION}</span> \</a>
+<a class="sourceLine" id="cb5-119" data-line-number="119">    /hyperkube kubelet \</a>
+<a class="sourceLine" id="cb5-120" data-line-number="120">        --allow-privileged=true \</a>
+<a class="sourceLine" id="cb5-121" data-line-number="121">        --api-servers=http://<span class="va">${IP_MASTER}</span>:8080 \</a>
+<a class="sourceLine" id="cb5-122" data-line-number="122">        --v=2 \</a>
+<a class="sourceLine" id="cb5-123" data-line-number="123">        --address=0.0.0.0 \</a>
+<a class="sourceLine" id="cb5-124" data-line-number="124">        --enable-server \</a>
+<a class="sourceLine" id="cb5-125" data-line-number="125">        --hostname-override=<span class="va">${IP_MASTER}</span> \</a>
+<a class="sourceLine" id="cb5-126" data-line-number="126">        --cluster-dns=10.0.0.10 --cluster-domain=cluster.local \</a>
+<a class="sourceLine" id="cb5-127" data-line-number="127">        --config=/etc/kubernetes/manifests-multi \</a>
+<a class="sourceLine" id="cb5-128" data-line-number="128">        --healthz-port=0 \</a>
+<a class="sourceLine" id="cb5-129" data-line-number="129">        --read-only-port=0 \</a>
+<a class="sourceLine" id="cb5-130" data-line-number="130">        --cadvisor-port=0</a>
+<a class="sourceLine" id="cb5-131" data-line-number="131"></a>
+<a class="sourceLine" id="cb5-132" data-line-number="132"><span class="co">#</span></a>
+<a class="sourceLine" id="cb5-133" data-line-number="133"></a>
+<a class="sourceLine" id="cb5-134" data-line-number="134"><span class="co">#┌─────────────────────────────────────┐</span></a>
+<a class="sourceLine" id="cb5-135" data-line-number="135"><span class="co">#│   ADD A K8S NODE TO THE CLUSTER     │</span></a>
+<a class="sourceLine" id="cb5-136" data-line-number="136"><span class="co">#└─────────────────────────────────────┘</span></a>
+<a class="sourceLine" id="cb5-137" data-line-number="137"><span class="co"># the addr. of the api server is the one from the master</span></a>
+<a class="sourceLine" id="cb5-138" data-line-number="138"><span class="co"># config file is also not needed</span></a>
+<a class="sourceLine" id="cb5-139" data-line-number="139"><span class="ex">docker</span> run \</a>
+<a class="sourceLine" id="cb5-140" data-line-number="140">    --volume=/:/rootfs:ro \</a>
+<a class="sourceLine" id="cb5-141" data-line-number="141">    --volume=/sys:/sys:ro \</a>
+<a class="sourceLine" id="cb5-142" data-line-number="142">    --volume=/var/lib/docker/:/var/lib/docker:rw \</a>
+<a class="sourceLine" id="cb5-143" data-line-number="143">    --volume=/var/lib/kubelet/:/var/lib/kubelet:rw,shared \</a>
+<a class="sourceLine" id="cb5-144" data-line-number="144">    --volume=/var/run:/var/run:rw \</a>
+<a class="sourceLine" id="cb5-145" data-line-number="145">    --volume=/root/kubelet_manifest:/etc/kubernetes/manifests-multi:rw \</a>
+<a class="sourceLine" id="cb5-146" data-line-number="146">    --net=host \</a>
+<a class="sourceLine" id="cb5-147" data-line-number="147">    --privileged \</a>
+<a class="sourceLine" id="cb5-148" data-line-number="148">    --pid=host \</a>
+<a class="sourceLine" id="cb5-149" data-line-number="149">    -d \</a>
+<a class="sourceLine" id="cb5-150" data-line-number="150">    gcr.io/google_containers/hyperkube-amd64:<span class="va">${K8S_VERSION}</span> \</a>
+<a class="sourceLine" id="cb5-151" data-line-number="151">    /hyperkube kubelet \</a>
+<a class="sourceLine" id="cb5-152" data-line-number="152">        --allow-privileged=true \</a>
+<a class="sourceLine" id="cb5-153" data-line-number="153">        --api-servers=http://<span class="va">${IP_MASTER}</span>:8080 \</a>
+<a class="sourceLine" id="cb5-154" data-line-number="154">        --v=2 \</a>
+<a class="sourceLine" id="cb5-155" data-line-number="155">        --address=0.0.0.0 \</a>
+<a class="sourceLine" id="cb5-156" data-line-number="156">        --enable-server \</a>
+<a class="sourceLine" id="cb5-157" data-line-number="157">        --hostname-override=<span class="va">${IP_NODE1}</span> \</a>
+<a class="sourceLine" id="cb5-158" data-line-number="158">        --cluster-dns=10.0.0.10 --cluster-domain=cluster.local \</a>
+<a class="sourceLine" id="cb5-159" data-line-number="159">        --healthz-port=0 \</a>
+<a class="sourceLine" id="cb5-160" data-line-number="160">        --read-only-port=0 \</a>
+<a class="sourceLine" id="cb5-161" data-line-number="161">        --cadvisor-port=0</a>
+<a class="sourceLine" id="cb5-162" data-line-number="162"></a>
+<a class="sourceLine" id="cb5-163" data-line-number="163"><span class="co"># you need a second container with the k8s proxy</span></a>
+<a class="sourceLine" id="cb5-164" data-line-number="164"><span class="fu">sudo</span> docker run -d \</a>
+<a class="sourceLine" id="cb5-165" data-line-number="165">    --net=host \</a>
+<a class="sourceLine" id="cb5-166" data-line-number="166">    --privileged \</a>
+<a class="sourceLine" id="cb5-167" data-line-number="167">    gcr.io/google_containers/hyperkube-amd64:v<span class="va">${K8S_VERSION}</span> \</a>
+<a class="sourceLine" id="cb5-168" data-line-number="168">    /hyperkube proxy \</a>
+<a class="sourceLine" id="cb5-169" data-line-number="169">        --master=http://<span class="va">${IP_MASTER}</span>:8080 \</a>
+<a class="sourceLine" id="cb5-170" data-line-number="170">        --v=2</a></code></pre></div>
 </div>
 </section>
 <section id="discussion" class="level2">
@@ -573,9 +576,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="but-journey-1" class="slide level1">
 <h1>BUT-Journey</h1>
-<figure>
-<img src="pics/but-journey.svg" />
-</figure>
+<p><img data-src="pics/but-journey.svg" /></p>
 </section>
 <section id="kargo-kubernetes-ansible" class="slide level1">
 <h1>Kargo / Kubernetes-Ansible</h1>
@@ -589,14 +590,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div class="fragment">
 <blockquote>
-<p>it's now again Kubespray</p>
+<p>it’s now again Kubespray</p>
 </blockquote>
 </div>
 </section>
 <section id="kubespray" class="slide level1">
 <h1>Kubespray</h1>
 <figure>
-<img src="pics/renamekargo.png" alt="https://github.com/kubernetes-incubator/kubespray/issues/1352" /><figcaption><a href="https://github.com/kubernetes-incubator/kubespray/issues/1352" class="uri">https://github.com/kubernetes-incubator/kubespray/issues/1352</a></figcaption>
+<img data-src="pics/renamekargo.png" alt="https://github.com/kubernetes-incubator/kubespray/issues/1352" /><figcaption><a href="https://github.com/kubernetes-incubator/kubespray/issues/1352" class="uri">https://github.com/kubernetes-incubator/kubespray/issues/1352</a></figcaption>
 </figure>
 </section>
 <section class="slide level1">
@@ -615,17 +616,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div class="fragment">
 <ol start="3" type="1">
-<li>Prepare the nodes (sshd, ...) 😐</li>
+<li>Prepare the nodes (sshd, …) 😐</li>
 </ol>
 </div>
 <div class="fragment">
 <ol start="4" type="1">
-<li>Install requirements on local host (Ansible, ...) 😐</li>
+<li>Install requirements on local host (Ansible, …) 😐</li>
 </ol>
 </div>
 <div class="fragment">
 <ol start="5" type="1">
-<li>Configure Ansible (inventory file, yml files, ...) 😕</li>
+<li>Configure Ansible (inventory file, yml files, …) 😕</li>
 </ol>
 </div>
 <div class="fragment">
@@ -654,15 +655,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="quintessence-1" class="level2">
 <h2>Quintessence</h2>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">on</span> all hosts:
-<span class="ex">-</span> install OS, But…
-<span class="ex">-</span> install and configure e.g. sshd
-
-<span class="ex">on</span> local host:
-<span class="ex">-</span> install Ansible, Jinja, python-netaddr
-<span class="ex">-</span> create an inventory file, But…
-<span class="ex">-</span> customize the ansible-playbooks provided by kubespray, But…
-<span class="ex">-</span> run playbooks</code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="ex">on</span> all hosts:</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="ex">-</span> install OS, But…</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="ex">-</span> install and configure e.g. sshd</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="ex">on</span> local host:</a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="ex">-</span> install Ansible, Jinja, python-netaddr</a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="ex">-</span> create an inventory file, But…</a>
+<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="ex">-</span> customize the ansible-playbooks provided by kubespray, But…</a>
+<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="ex">-</span> run playbooks</a></code></pre></div>
 </section>
 <section id="discussion-1" class="level2">
 <h2>Discussion</h2>
@@ -672,7 +673,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>needs Ansible skills</li>
 <li>hides the Etcd, Overlay Network and Kubernetes installation</li>
 <li>offers update-ability</li>
-<li>can be also used for the 'cloud'</li>
+<li>can be also used for the ‘cloud’</li>
 <li>still some preparation of bare metal hosts</li>
 <li>still installation of bare metal hosts</li>
 </ul>
@@ -681,16 +682,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="but-journey-2" class="slide level1">
 <h1>BUT-Journey</h1>
-<figure>
-<img src="pics/but-journey.svg" />
-</figure>
+<p><img data-src="pics/but-journey.svg" /></p>
 </section>
 <section id="digital-rebar" class="slide level1">
 <h1>Digital-Rebar</h1>
 <div class="fragment">
-<figure>
-<img src="pics/digitalRebarOverview.png" />
-</figure>
+<p><img data-src="pics/digitalRebarOverview.png" /></p>
 </div>
 </section>
 <section id="digital-rebar-1" class="slide level1">
@@ -700,7 +697,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </blockquote>
 <div class="fragment">
 <figure>
-<img src="pics/digitalRebarV2.png" alt="http://rebar.digital/" /><figcaption><a href="http://rebar.digital/" class="uri">http://rebar.digital/</a></figcaption>
+<img data-src="pics/digitalRebarV2.png" alt="http://rebar.digital/" /><figcaption><a href="http://rebar.digital/" class="uri">http://rebar.digital/</a></figcaption>
 </figure>
 </div>
 </section>
@@ -754,9 +751,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="quintessence-2" class="level2">
 <h2>Quintessence</h2>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">on</span> local host:
-<span class="ex">-</span> install Digital-Rebar
-<span class="ex">-</span> configuration and installation of K8s via WebUI</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="ex">on</span> local host:</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="ex">-</span> install Digital-Rebar</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="ex">-</span> configuration and installation of K8s via WebUI</a></code></pre></div>
 </section>
 <section id="installation" class="level2">
 <h2>Installation</h2>
@@ -766,12 +763,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="fragment">
 <p>fixings:</p>
 <ul>
-<li><img src="pics/digitalRebarInstallErrorCentOS.png" title="fig:" alt="updated CentOS image version" /></li>
+<li><img data-src="pics/digitalRebarInstallErrorCentOS.png" title="fig:" alt="updated CentOS image version" /></li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><a href="http://digital-rebar.readthedocs.io/en/latest/development/dev_env/kvm-slaves.html?highlight=libvirt">&quot;deleted virbr0&quot;</a></li>
+<li><a href="http://digital-rebar.readthedocs.io/en/latest/development/dev_env/kvm-slaves.html?highlight=libvirt">“deleted virbr0”</a></li>
 <li>…</li>
 </ul>
 </div>
@@ -803,7 +800,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li>needs a admin/local/bastion host</li>
 <li>based on Kargo, maybe later also on Kubespray</li>
-<li>automates all steps (installation, preparation, updating, ...)</li>
+<li>automates all steps (installation, preparation, updating, …)</li>
 <li>needs fixings to work</li>
 </ul>
 </div>
@@ -818,7 +815,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div class="fragment">
 <ul>
-<li>also the community enhance K8s itself (documentations, installations, ...)</li>
+<li>also the community enhance K8s itself (documentations, installations, …)</li>
 </ul>
 </div>
 <div class="fragment">
@@ -835,8 +832,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     </div>
   </div>
 
-  <script src="./revealjs/lib/js/head.min.js"></script>
-  <script src="./revealjs/js/reveal.js"></script>
+  <script src="/home/tron/projects/src/github.com/hakimel/reveal.js/lib/js/head.min.js"></script>
+  <script src="/home/tron/projects/src/github.com/hakimel/reveal.js/js/reveal.js"></script>
 
   <script>
 
@@ -845,14 +842,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       Reveal.initialize({
         // Display the page number of the current slide
         slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
         // Transition style
         transition: 'fade', // none/fade/slide/convex/concave/zoom
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: './revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: './revealjs/plugin/zoom-js/zoom.js', async: true },
-              { src: './revealjs/plugin/notes/notes.js', async: true }
+          { src: '/home/tron/projects/src/github.com/hakimel/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '/home/tron/projects/src/github.com/hakimel/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '/home/tron/projects/src/github.com/hakimel/reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
